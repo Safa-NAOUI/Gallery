@@ -14,7 +14,4 @@ ext {
     coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
 
-    domainDependencies = [
-            coroutinesCore : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
-    ]
 }

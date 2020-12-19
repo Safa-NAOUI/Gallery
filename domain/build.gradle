@@ -2,13 +2,12 @@ apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
 dependencies {
-    def domainDependencies = rootProject.ext.domainDependencies
+    def domainDependencies = rootProject.ext
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     implementation domainDependencies.coroutinesCore
-
-
 
 }
 

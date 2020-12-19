@@ -13,7 +13,7 @@ class GetAlbumUseCase(private val AlbumRepository: AlbumRepository) : BaseUseCas
         resultChannel.send(Result.State.Loading)
 
         /** Get album from persistence and send it, synchronous **/
-        resultChannel.send(AlbumRepository.getAlbums(params))
+        resultChannel.send(AlbumRepository.getAlbums())
 
         resultChannel.send(Result.State.Loaded)
     }
