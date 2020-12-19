@@ -1,5 +1,6 @@
 package lbc.gallery.domain.repository
 
+import lbc.gallery.domain.entities.AlbumEntity
 import lbc.gallery.domain.usecases.base.Error
 import lbc.gallery.domain.usecases.base.Result
 
@@ -12,5 +13,5 @@ interface AlbumRepository {
      * get list of album
      *
      */
-    suspend fun getAlbums(page: Int): Result<List<AlbumRepository>, Error>
+    suspend fun getAlbums(): Result<List<AlbumEntity>, Error>
 }

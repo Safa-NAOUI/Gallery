@@ -9,10 +9,10 @@ import lbc.gallery.domain.usecases.base.Result
  */
 class GetAlbumUseCase(private val AlbumRepository: AlbumRepository) : BaseUseCase<Int>() {
     override suspend fun run(params: Int) {
-        /* Started loading */
+        /** Started loading **/
         resultChannel.send(Result.State.Loading)
 
-        /* Get album from persistence and send it, synchronous */
+        /** Get album from persistence and send it, synchronous **/
         resultChannel.send(AlbumRepository.getAlbums(params))
 
         resultChannel.send(Result.State.Loaded)
