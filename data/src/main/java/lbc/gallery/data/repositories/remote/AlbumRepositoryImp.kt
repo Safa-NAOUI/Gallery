@@ -1,4 +1,4 @@
-package lbc.gallery.data.repositories
+package lbc.gallery.data.repositories.remote
 
 import lbc.gallery.data.api.service.AlbumService
 import lbc.gallery.domain.entities.AlbumEntity
@@ -16,7 +16,10 @@ class AlbumRepositoryImp(val albumService: AlbumService) : AlbumRepository {
             if (response.isSuccessful && response.body() !== null) {
                 return Result.Success(response.body()!!.map {
                     return@map AlbumEntity(
-                        it.albumId, it.id, it.title, it.url, it.thumbnailUrl
+                        it.albumId,id= it.id,
+                        title= it.title,
+                        url=it.url,
+                        thumbnailUrl = it.thumbnailUrl
                     )
                 })
             } else {
