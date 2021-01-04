@@ -1,10 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+
+    buildFeatures {
+        dataBinding true
+    }
 
     defaultConfig {
         applicationId 'lbc.gallery'
@@ -22,6 +27,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    android {
+        compileOptions {
+            targetCompatibility = "8"
+            sourceCompatibility = "8"
+        }
+    }
 }
 
 dependencies {
@@ -36,4 +48,25 @@ dependencies {
 
     implementation project(':data')
     implementation project(':domain')
+
+
+    implementation koinAndroid
+    implementation koinAndroidScope
+    implementation koinAndroidViewModel
+    implementation coroutinesCore
+    implementation coroutinesAndroid
+    implementation navigationFragment
+    implementation navigationUi
+    implementation retrofit
+    implementation loggingInterceptor
+    implementation gson
+    implementation gsonConverter
+    implementation lifecycleExtensions
+    implementation glide
+    implementation paging
+
+
+    //Coroutine View Model Scope.
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0"
+
 }

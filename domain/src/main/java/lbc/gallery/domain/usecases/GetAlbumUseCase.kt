@@ -7,13 +7,13 @@ import lbc.gallery.domain.usecases.base.Result
 /**
  * Created by Safa NAOUI on 19/12/2020.
  */
-class GetAlbumUseCase(private val AlbumRepository: AlbumRepository) : BaseUseCase<Int>() {
+class GetAlbumUseCase(private val albumRepository: AlbumRepository) : BaseUseCase<Int>() {
     override suspend fun run(params: Int) {
         /** Started loading **/
         resultChannel.send(Result.State.Loading)
 
         /** Get album from persistence and send it, synchronous **/
-        resultChannel.send(AlbumRepository.getAlbums())
+        resultChannel.send(albumRepository.getAlbums())
 
         resultChannel.send(Result.State.Loaded)
     }

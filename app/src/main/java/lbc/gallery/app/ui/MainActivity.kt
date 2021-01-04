@@ -1,4 +1,4 @@
-package lbc.gallery.app
+package lbc.gallery.app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
