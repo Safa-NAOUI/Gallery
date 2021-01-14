@@ -1,6 +1,6 @@
 package lbc.gallery.data.api.service
 
-import lbc.gallery.domain.entities.AlbumEntity
+import lbc.gallery.data.api.response.AlbumResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -9,5 +9,5 @@ import retrofit2.http.GET
  */
 interface AlbumService {
     @GET("/img/shared/technical-test.json")
-    suspend fun getAlbums(): Response<List<AlbumEntity>>
+    suspend fun getAlbums(): Response<List<AlbumResponse>>
 }

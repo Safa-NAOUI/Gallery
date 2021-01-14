@@ -14,14 +14,16 @@ class AlbumRepositoryImp(val albumService: AlbumService) : AlbumRepository {
         try {
             val response = albumService.getAlbums()
             if (response.isSuccessful && response.body() !== null) {
-                return Result.Success(response.body()!!.map {
+                return Result.Success(
+                    response.body()!!.map {
                     return@map AlbumEntity(
                         it.albumId,id= it.id,
                         title= it.title,
                         url=it.url,
                         thumbnailUrl = it.thumbnailUrl
                     )
-                })
+                }
+                )
             } else {
                 return Result.Failure(Error.ResponseError)
             }

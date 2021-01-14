@@ -11,6 +11,6 @@
         android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="lbc.gallery.app.ui.photo.PhotoListFragment"/>
+        android:name="lbc.gallery.app.ui.album.AlbumListFragment"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

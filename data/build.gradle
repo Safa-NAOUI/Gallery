@@ -28,19 +28,31 @@ dependencies {
     def dataDependencies = rootProject.ext
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation project(":domain")
+    /**** Bases ****/
+
+    implementation dataDependencies.kotlinStdLib
+    implementation dataDependencies.coreKTx
+    implementation dataDependencies.appCompat
+
+    /**** Test ****/
+
+    testImplementation dataDependencies.junit
+    androidTestImplementation dataDependencies.testJunit
+    androidTestImplementation dataDependencies.espressoCore
+
+    /**** retrofit ****/
 
     implementation dataDependencies.retrofit
     implementation dataDependencies.gson
     implementation dataDependencies.gsonConverter
     implementation dataDependencies.loggingInterceptor
+
+    /**** coroutine ****/
+
     implementation dataDependencies.coroutinesCore
     implementation dataDependencies.coroutinesAndroid
+
+    implementation project(":domain")
+
 }
