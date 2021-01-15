@@ -5,8 +5,7 @@ dependencies {
     def domainDependencies = rootProject.ext
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
+    implementation kotlinStdLibJDK7
     implementation domainDependencies.coroutinesCore
 
 }

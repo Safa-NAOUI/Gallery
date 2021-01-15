@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="albums"
+            type="lbc.gallery.domain.entities.AlbumEntity" />
+    </data>
+
+    <ImageView
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:scaleType="centerCrop"
+        app:albums="@{albums.url}" />
+
+</layout>
