@@ -20,21 +20,21 @@ import lbc.gallery.domain.entities.AlbumEntity
 @BindingAdapter("items", "viewmodel")
 fun setItems(listView: RecyclerView, items: List<AlbumEntity>, viewModel: AlbumListViewModel) {
     (listView.adapter as AlbumAdapter).submitList(items)
-   viewModel.requestItems()
+    viewModel.requestItems()
 }
 
 
 @BindingAdapter("albums")
 fun loadAlbum(imageView: ImageView, albumURL: String) {
 
-if(albumURL.isNotEmpty()) {
-    val url = GlideUrl(
-        albumURL, LazyHeaders.Builder()
-            .build()
-    )
-    Glide.with(imageView).load(url)
-        .error(R.drawable.ic_launcher_background)
-        .into(imageView)
+    if (albumURL.isNotEmpty()) {
+        val url = GlideUrl(
+            albumURL, LazyHeaders.Builder()
+                .build()
+        )
+        Glide.with(imageView).load(url)
+            .error(R.mipmap.ic_not_found)
+            .into(imageView)
 
-}
+    }
 }
