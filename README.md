@@ -1,5 +1,7 @@
 # Clean Architecture + MVVM ( Koin & Coroutine & DataBinding )
 
+<img src="https://user-images.githubusercontent.com/1812129/68319008-e9d39d00-00bd-11ea-9245-ebedd2a2c067.png" />
+
 ## Overview
 
 This Repository contains a Detailed Sample app that Implements MVVM clean Architecture in Kotlin using Retorfit2, Koin, Coroutines, AndroidX, DataBinding
@@ -18,3 +20,5 @@ Coroutines for async processing
 Koin for dependency injection
 Retrofit for Json Parsing
 Glide for Image Loading
+
+
